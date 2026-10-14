@@ -124,6 +124,10 @@ a{color:var(--ink)}
 @media(min-width:760px){.grid2{grid-template-columns:1fr 1fr}}
 input,select,textarea{border-color:#e2e1dc}
 input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
+@media(max-width:759px){
+ .code{font-size:11.5px;line-height:1.9;padding:44px 18px 64px;border-radius:90px 18px 18px 18px;min-height:0;white-space:nowrap}
+ .code::after{width:80px;height:80px;right:-28px;bottom:-28px}
+}
 </style>
 </head>
 <body>
@@ -141,7 +145,7 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
   <p class="lead">I design, build and redesign websites, then host and look after them so they stay fast, secure and up to date. One developer, start to finish: Koman Rudden, OnesnZeros.</p>
   <div class="cta"><a class="btn btn-p" href="#contact">Start a project</a><a class="btn btn-s" href="#work">See sample work</a></div>
  </div>
- <div class="code" aria-hidden="true"><div class="c1">// onzs.build()</div>site.design(<span class="k">{ mobileFirst: true }</span>)<br>site.deploy(<span class="k">{ fast: true, ssl: true }</span>)<br>care.plan(<span class="k">"from R450/mo"</span>)<br>updates.handle(<span class="k">"the boring bits"</span>)</div>
+ <div class="code" aria-hidden="true"><div class="c1">// onzs.build()</div>site.design(<span class="k">{ mobile: true }</span>)<br>site.deploy(<span class="k">{ ssl: true }</span>)<br>care.plan(<span class="k">"from R450/mo"</span>)<br>updates.handle(<span class="k">"boring bits"</span>)</div>
 </div></section>
 
 <section id="services" class="alt"><div class="wrap">

@@ -1,0 +1,14 @@
+.git
+.git/**
+.gitignore
+.assetsignore
+README*
+wrangler.*
+email/
+email/**
+me.png
+node_modules
+node_modules/**
+*.md
+.wrangler
+.wrangler/**

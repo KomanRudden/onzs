@@ -74,10 +74,6 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdro
 .step{counter-increment:s;padding-left:58px;position:relative}
 .step::before{content:counter(s);position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;background:var(--accent);color:#fff;font-weight:600;display:grid;place-items:center}
 .step p{color:var(--muted)}
-.work{display:grid;gap:28px;align-items:center;margin-top:2rem;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
-.work .shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 12px 30px -15px rgba(0,0,0,.3)}
-.badge{display:inline-block;background:var(--soft);color:var(--accent-d);font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:999px;margin-bottom:.8rem}
-.work p{color:var(--muted);margin-bottom:1.2rem}
 .price{display:flex;flex-direction:column}
 .price .amt{font-family:Poppins,sans-serif;font-size:2rem;margin:.4rem 0 .2rem}
 .price .amt small{font-family:Poppins,sans-serif;font-size:.95rem;color:var(--muted)}
@@ -107,7 +103,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
  .grid3{grid-template-columns:repeat(3,1fr)}
  .steps{grid-template-columns:repeat(4,1fr)}
  .step{padding-left:0;padding-top:58px}
- .work{grid-template-columns:1.3fr 1fr;padding:28px}
  .about{grid-template-columns:auto 1fr;gap:48px}
  .contact{grid-template-columns:1fr 1.1fr;align-items:start}
 }
@@ -123,9 +118,8 @@ a{color:var(--ink)}
 .code .c1{color:var(--accent)}.code .k{color:#9a96b0}
 .code::after{content:"";position:absolute;right:-60px;bottom:-60px;width:200px;height:200px;border-radius:50%;background:var(--accent)}
 .card .ic{background:var(--accent);font:700 .85rem Poppins,sans-serif;width:auto;height:auto;padding:4px 12px;border-radius:999px;display:inline-block}
-.card{border:none}.alt{background:#fff}.alt .card,.work,details,form{background:var(--card);border-color:transparent}
+.card{border:none}.alt{background:#fff}.alt .card,details,form{background:var(--card);border-color:transparent}
 .step::before{background:var(--accent);color:var(--ink)}
-.badge{background:var(--accent);color:var(--ink)}
 .price.feat{border:2px solid var(--ink)}
 .dark{background:var(--ink);color:#fff}.dark .lead,.dark .eyebrow{color:#cfcde0}.dark .mail{color:var(--accent)}
 .grid2{display:grid;gap:20px;margin-top:2rem}
@@ -141,7 +135,7 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
 <body>
 <header><div class="wrap nav">
  <a class="logo" href="#">OnesnZeros<i>.</i></a>
- <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li></ul>
+ <ul><li><a href="#services">Services</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#about">About</a></li><li><a href="#faq">FAQ</a></li></ul>
  <a class="btn btn-p" href="#contact">Get in touch</a>
 </div></header>
 
@@ -151,7 +145,7 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
   <p class="eyebrow">Web studio · George, South Africa</p>
   <h1>Your business deserves a great website. <span class="hl">Let's build it right.</span></h1>
   <p class="lead">I design, build and redesign websites, then host and look after them so they stay fast, secure and up to date.</p>
-  <div class="cta"><a class="btn btn-p" href="#contact">Start a project</a><a class="btn btn-s" href="#work">See sample work</a></div>
+  <div class="cta"><a class="btn btn-p" href="#contact">Start a project</a></div>
  </div>
  <div class="code" aria-hidden="true"><div class="c1">// onzs.build()</div>site.design(<span class="k">{ mobile: true }</span>)<br>site.deploy(<span class="k">{ ssl: true }</span>)<br>care.plan(<span class="k">"from R450/mo"</span>)<br>updates.handle(<span class="k">"boring bits"</span>)</div>
 </div></section>
@@ -174,21 +168,6 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
   <div class="step"><h3>Proposal</h3><p>You get a clear scope and price up front. No surprises.</p></div>
   <div class="step"><h3>Build</h3><p>I build it and share progress as I go, so you can give feedback early.</p></div>
   <div class="step"><h3>Launch &amp; care</h3><p>We go live, and I can keep looking after it so it stays fast, secure and current.</p></div>
- </div>
-</div></section>
-
-<section id="work" class="alt"><div class="wrap">
- <p class="eyebrow">Recent work</p>
- <h2>Sample work</h2>
- <p class="lead">OnesnZeros is new, so here's a concept site that shows the kind of quality you can expect.</p>
- <div class="work">
-  <a class="shot" href="https://oudekloof.onzs.co.za" target="_blank" rel="noopener"><img src="img/oudekloof.jpg" alt="Screenshot of the Oude Kloof guesthouse sample website" loading="lazy" width="1280" height="800"></a>
-  <div>
-   <span class="badge">Sample / concept site</span>
-   <h3>Oude Kloof Guesthouse &amp; Camping</h3>
-   <p>A concept website for a guesthouse in Prince Albert, in the Karoo: warm photography-led design, clear rooms and rates, and easy enquiries on mobile. Built as a sample, not a paid client project.</p>
-   <a class="btn btn-s" href="https://oudekloof.onzs.co.za" target="_blank" rel="noopener">View the sample site →</a>
-  </div>
  </div>
 </div></section>
 

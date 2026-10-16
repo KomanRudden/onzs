@@ -96,6 +96,9 @@ label{font-size:.9rem;font-weight:500;display:grid;gap:6px}
 input,select,textarea{font:inherit;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;width:100%}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
 .mail{font-size:1.2rem;font-weight:600}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cf-status{margin:0;font-weight:600;min-height:1.2em}.cf-status.ok{color:#14733a}.cf-status.err{color:#b3261e}
+form button:disabled{opacity:.6;cursor:wait}
 footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 @media(min-width:760px){
@@ -249,26 +252,27 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
   <p class="eyebrow">Contact</p>
   <h2>Let's talk about your project</h2>
   <p class="lead" style="margin-bottom:1.4rem">Send a short message about what you need. We'll reply by email.</p>
-  <a class="mail" href="mailto:hello@onzs.co.za">hello@onzs.co.za</a>
+  <span class="mail">hello@onzs.co.za</span>
  </div>
- <form id="cf" style="color:var(--ink)">
-  <label>Your name<input name="name" required autocomplete="name"></label>
-  <label>Business (optional)<input name="biz" autocomplete="organization"></label>
+ <form id="cf" style="color:var(--ink)" novalidate>
+  <label>Your name<input name="name" required maxlength="100" autocomplete="name"></label>
+  <label>Your email<input name="email" type="email" required maxlength="254" autocomplete="email"></label>
+  <label>Business (optional)<input name="biz" maxlength="120" autocomplete="organization"></label>
   <label>What do you need?<select name="type"><option>A new website</option><option>A website redesign</option><option>Hosting &amp; care</option><option>Something else</option></select></label>
-  <label>Message<textarea name="msg" rows="4" required></textarea></label>
-  <button class="btn btn-p" type="submit">Open email to send</button>
-  <small style="color:var(--muted)">This opens your email app with your message filled in.</small>
+  <label>Message<textarea name="message" rows="4" required maxlength="4000"></textarea></label>
+  <input type="hidden" name="_subject" value="[onzs.co.za] New enquiry">
+  <div class="hp" aria-hidden="true"><label>Leave this empty<input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+  <button class="btn btn-p" type="submit">Send message</button>
+  <p class="cf-status" role="status" aria-live="polite"></p>
  </form>
 </div></section>
 </main>
 
-<footer><div class="wrap"><span>© <span id="y"></span> OnesnZeros · George, South Africa</span><a href="mailto:hello@onzs.co.za">hello@onzs.co.za</a></div></footer>
+<footer><div class="wrap"><span>© <span id="y"></span> OnesnZeros · George, South Africa</span><span>hello@onzs.co.za</span></div></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
-document.getElementById('cf').addEventListener('submit',function(e){e.preventDefault();var f=e.target;
-var s='Enquiry: '+f.type.value+' – '+f.name.value;
-var b='Name: '+f.name.value+'\nBusiness: '+f.biz.value+'\nNeed: '+f.type.value+'\n\n'+f.msg.value;
-location.href='mailto:hello@onzs.co.za?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);});
+
 </script>
+<script src="contact.js" defer></script>
 </body>
 </html>

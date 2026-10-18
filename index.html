@@ -136,7 +136,7 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
  .code{font-size:11.5px;line-height:1.9;padding:44px 18px 64px 34px;border-radius:90px 18px 18px 18px;min-height:0;white-space:nowrap}
  .code::after{width:80px;height:80px;right:-28px;bottom:-28px}
 }
-.pc{max-width:900px;margin:2rem auto 0;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:40px}
+.pc{max-width:1040px;margin:2rem auto 0;background:var(--card);border:2px solid var(--ink);border-radius:var(--r);padding:40px}
 .pc-cols{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:stretch}
 .pc-col{text-align:left}
 .pc-label{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 .9rem}
@@ -146,7 +146,18 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
 .pc-div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;width:48px}
 .pc-div::before,.pc-div::after{content:"";flex:1;width:1px;background:#d6d5d0}
 .pc-div span{font:600 .72rem/1 "JetBrains Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--ink);background:var(--accent);padding:6px 9px;border-radius:999px}
-.pc-ticks{list-style:none;display:flex;flex-wrap:wrap;gap:12px 32px;margin:32px 0 0;padding:28px 0 0;border-top:1px solid #d6d5d0}
+.pc-tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;padding-top:28px;border-top:1px solid #d6d5d0}
+.pc-tier{border:1px solid #d6d5d0;border-radius:12px;padding:20px;background:#fff;text-align:left}
+.pc-tier h3{margin:0;font-size:1rem}
+.pc-tp{font:600 1.8rem/1.1 Poppins,sans-serif;margin:.5rem 0 .2rem;color:var(--ink)}
+.pc-tp small{font-size:.85rem;font-weight:500;color:var(--muted)}
+.pc-ts{margin:0 0 .8rem;font-size:.9rem;color:var(--muted)}
+.pc-tier ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.92rem}
+.pc-tier li{padding-left:22px;position:relative}
+@media(max-width:1000px){.pc-tiers{grid-template-columns:repeat(2,1fr)}}
+.pc-custom{border:2px dashed var(--ink)}
+.pc-tier li::before{content:"\2713";position:absolute;left:0;font-weight:700}
+.pc-ticks{list-style:none;display:flex;flex-wrap:wrap;gap:12px 32px;margin:24px 0 0;padding:0}
 .pc-ticks li{font-size:1rem;color:var(--ink);display:flex;align-items:center;gap:10px}
 .pc-ticks li::before{content:"\2713";display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--accent);font-size:.75rem;font-weight:700}
 .pc-fine{font-size:.9rem;color:var(--muted);margin:14px 0 0}
@@ -159,6 +170,7 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
  .pc-div::before,.pc-div::after{flex:1;width:auto;height:1px}
  .pc-num{font-size:2.3rem}
  .pc-ticks{flex-direction:column}
+ .pc-tiers{grid-template-columns:1fr}
  .pc .btn{display:block;text-align:center}
 }
 </style>
@@ -217,13 +229,23 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
    <div class="pc-col">
     <p class="pc-label">Step 2 / Monthly care</p>
     <p class="pc-num">R150 - R450 <small>/month</small></p>
-    <p class="pc-body">Based on website size</p>
+    <p class="pc-body">Pick the size that fits your website</p>
    </div>
   </div>
+  <div class="pc-tiers">
+   <div class="pc-tier"><h3>Starter</h3><p class="pc-tp">R150<small>/month</small></p><p class="pc-ts">One-page website</p>
+    <ul><li>Hosting and SSL</li><li>Contact form</li><li>WhatsApp button and map</li><li>1 small update a month</li></ul></div>
+   <div class="pc-tier"><h3>Standard</h3><p class="pc-tp">R300<small>/month</small></p><p class="pc-ts">Multi-page website</p>
+    <ul><li>Everything in Starter</li><li>Extra pages: menu, gallery, about</li><li>2 small updates a month</li></ul></div>
+   <div class="pc-tier"><h3>Full</h3><p class="pc-tp">R450<small>/month</small></p><p class="pc-ts">Larger website</p>
+    <ul><li>Everything in Standard</li><li>Booking enquiry form</li><li>Larger gallery</li><li>4 small updates a month</li></ul></div>
+   <div class="pc-tier pc-custom"><h3>Custom</h3><p class="pc-tp">Let's talk</p><p class="pc-ts">Bigger projects</p>
+    <ul><li>Everything in Full</li><li>Larger or more complex websites</li><li>Special features you need</li><li>Quoted to fit your project</li></ul></div>
+  </div>
   <ul class="pc-ticks">
-   <li>Hosting</li><li>Your own domain</li><li>Small updates</li>
+   <li>Your own domain (you pay the yearly fee, we set it up)</li><li>Backups</li><li>Email support</li>
   </ul>
-  <p class="pc-fine">No contract, cancel anytime</p>
+  <p class="pc-fine">Included in every plan. No contract, cancel anytime.</p>
   <a class="btn btn-p" href="#contact">Get your free design</a>
  </div>
  <p class="note pc-note">All prices in South African Rand. Get in touch and we'll confirm the monthly fee for your website size.</p>
@@ -240,7 +262,7 @@ input:focus,select:focus,textarea:focus{outline-color:var(--ink)}
  <p class="eyebrow">FAQ</p>
  <h2>Common questions</h2>
  <details><summary>How much does it cost?</summary><p>Website design is free, including 3 free changes. After that there is a monthly fee of R150 - R450 depending on website size. It covers hosting, your own domain, care and small updates. No contract, cancel anytime.</p></details>
- <details><summary>What does the monthly fee include?</summary><p>Hosting, your own domain, SSL certificate, care and ongoing small updates like text, photo and price changes.</p></details>
+ <details><summary>What does the monthly fee include?</summary><p>Every plan includes hosting, SSL, backups, email support and your own domain set-up (you pay the yearly domain fee). Starter has 1 small update a month, Standard 2 and Full 4. Updates are things like text, photo and price changes.</p></details>
  <details><summary>Do I own my domain and content?</summary><p>Yes. Your domain name and your content are yours.</p></details>
  <details><summary>I already have a website. Can you help?</summary><p>Yes. We can redesign it, move it to better hosting, or just take over looking after it.</p></details>
  <details><summary>Do you only work with businesses in George?</summary><p>No. We're based in George, but we work with clients anywhere. Everything can be handled over email.</p></details>

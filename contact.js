@@ -1,4 +1,4 @@
-// Formspree endpoint ID for this form. Replace xeaedqdp with the real ID (the part after /f/ in the Formspree form URL).
+// Formspree endpoint ID for this form (the part after /f/ in the Formspree form URL).
 const FORMSPREE_ID = 'xeaedqdp';
 
 (function () {
@@ -18,7 +18,7 @@ const FORMSPREE_ID = 'xeaedqdp';
     if (!name) return show('err', 'Please enter your name.');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return show('err', 'Please enter a valid email address.');
     if (msg.length < 2) return show('err', 'Please enter a message.');
-    if (!FORMSPREE_ID || FORMSPREE_ID === 'xeaedqdp') {
+    if (!FORMSPREE_ID || FORMSPREE_ID === 'REPLACE_ME') {
       return show('err', 'Sorry, the contact form isn\u2019t switched on yet. Please try again soon.');
     }
     b.disabled = true; b.textContent = 'Sending...'; show('', '');

@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /img/o/
 
 Sitemap: https://onzs.co.za/sitemap.xml
